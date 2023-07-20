@@ -27,11 +27,4 @@ The app has the following features:
 - `templates` - Default flask templates folder
 
 
-## Installation
-# Local Setup
-- Clone the project
-- Run `setup.sh`
-
-# Local Development Run
-- `local_run.sh` It will start the flask app in `development`. Suited for local development
 
