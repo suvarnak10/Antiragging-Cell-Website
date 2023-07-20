@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>punishments</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow-y: scroll;
+        }
+
+        header {
+            color:white;
+        background-color: #ff0057;
+        padding: 25px;
+        text-align: center;
+        }
+        main 
+        {
+        background-size: cover;
+    
+        background-color: #333;
+        position: relative;
+        
+        margin: 0 auto;
+        min-height: 100vh;
+        column-gap: 4rem;
+        padding-block: min(20vh, 2rem);
+                }
+
+        
+
+        /* Styles specific to the rules section */
+        #punishments {
+        margin-bottom: 40px;
+        color: white;
+        padding-left: 100px;
+        padding-right: 100px;
+        }
+
+        #punishments h2 {
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 20px;
+        }
+        #punishments p{
+            font-size:large;
+        }
+
+        #punishments ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        color: white;
+        font-size: large;
+        }
+
+        #punishments li {
+        margin-bottom: 10px;
+        color: white;
+        }
+    </style>
+    <header>
+        <img src="{{url_for('static', filename='punishment.jpg')}}" width="250" height="250">
+        <h1>Anti-Ragging Rules </h1>
+    </header>
+    
+    <main>
+        
+        <section id="punishments">
+            <h2  style="color: white">Punishments</h2>
+            <ul>
+                <li>Verbal warning</li>
+                <li>Written apology</li>
+                <li>Community service within the college</li>
+                <li>Loss of scholarships or financial aid</li>
+                <li>Suspension from classes for a specified period</li>
+                <li>Expulsion from the college</li>
+                <li>Legal action as per prevailing laws</li>
+                <li>Debarment from future admission to any institution</li>
+            </ul>
+        </section>
+    </main>
+ 
+</body>
+</html>

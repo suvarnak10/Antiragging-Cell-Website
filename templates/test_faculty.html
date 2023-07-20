@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faculty_Dashboard</title>
+</head>
+<body>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+    background-color: #3e555e;
+  }
+  
+  .menu-bar {
+    background-color: #333;
+    color: white;
+    padding: 30px;
+    text-align: right;
+  }
+  
+  .menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-bar li {
+    display: inline-block;
+    margin-left: 50px;
+  }
+  
+  .menu-bar a {
+    color: white;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    padding: 30px;
+  }
+  
+  .content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  .complaint-heading {
+    color: #fffdfd;
+    text-align: center;
+    font-family: Georgia, serif;
+    margin-bottom: 30px;
+  }
+  
+  .message-container {
+    background-color: rgb(193, 185, 185);
+    max-height: 600px;
+    overflow-y: scroll;
+    width: 1000px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 10px solid #333;
+    border-radius: 20px;
+  }
+  .complaint {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(253, 251, 251);
+    border: 4px solid rgb(15, 14, 14);
+    padding: 10px;
+  }
+  
+  .complaint h2 {
+    margin: 10 0 10px;
+    font-family: Georgia, serif;
+  }
+  
+  .complaint h3.complaint-heading {
+    margin: 0;
+    font-family: Georgia, serif;
+  }
+  
+  .complaint-letter p {
+    margin: 10px 0;
+    font-family: Georgia, serif;
+  }
+  
+  
+  .message:not(:last-child) {
+    border-bottom: none;
+  }
+  
+  .message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .message-header h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+  }
+  
+  .message-actions {
+    display: flex;
+    align-items: center;
+    font-family: Georgia, serif;
+  }
+  
+  .action-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer
+  }
+    </style>
+  <nav class="menu-bar">
+    <ul>
+      
+      <li><a href="{{url_for('faculty_signin')}}" onclick="return confirm('Are you sure?')"> LOGOUT</a></li>
+    </ul>
+  </nav>
+  
+  <div class="content">
+    <h1 class="complaint-heading">Students Complaints</h1>
+    {% for v in all_students %}
+    
+     <div class="message-container">
+     	<h3>Student_Email Id:{{v[0]}}</h3>
+        <h3>Department      :{{v[1]}}</h3>
+        <h3>Contact No      :{{v[2]}} </h3>
+        
+       {% for s in all_complaint %}
+        
+        {% if s[0] == v[0] %}
+             
+            <div class="complaint" style="color:black;">
+                <h2>Complaint ID: {{s[3]}}</h2>
+                <h3 class="complaint-heading">Complaint Letter</h3>
+                <div class="complaint-letter">
+                    <p>{{s[4]}}</p>
+                    <p class="status">Status: {{s[5]}}</p> 
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Pending</a>
+                        <a class="dropdown-item" href="#">In Progress</a>
+                        <a class="dropdown-item" href="#">Resolved</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+     </div>
+     {% endfor %}
+   </div>
+    <!-- Add more messages here -->
+</body>
+</html>

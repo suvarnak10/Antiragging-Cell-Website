@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>stu_page</title>
+</head>
+<body>
+    <style>
+        body
+        {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color:rgb(5, 5, 5);
+            background-size: cover;
+            overflow: scroll;
+            
+        }
+        .button{
+
+            text-decoration: none;
+            background-color: #1a1818;
+            color: white;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .button:hover{background:black;}
+        .containers
+        {
+            width: 100%;
+            background: none;
+            color: white;
+            padding: 0px 500px;
+            font-size: 10px;
+            cursor: pointer;
+            margin: 12px 0;
+            
+        }
+        .table{
+            width: 100%;
+            padding-left: 30px;
+            background: none;
+            color: white;
+            font-size: 20px;
+            margin: 120px 0; 
+            border-collapse: collapse;
+        }
+        .header
+        {
+            min-height: 100vh;
+            width: 100%;
+            background-color: grey;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7));
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow-y: scroll;
+        }
+        .second h2{
+            margin: 50px 0; 
+            width: 80%;
+            padding-left: 35px;
+        }
+        nav
+        {   
+            
+            width: 100%;
+            padding-top: 1px;
+            align-items: center;
+            text-decoration: none;
+            
+        }
+        .navlinks a 
+        {
+             float: left;
+             display: block;
+             color: #f2f2f2;
+             text-align: center;
+             padding-right: 15px;
+             padding: 15px 15px;
+             text-decoration: none;
+             border: 1px solid black;
+            border-radius: 1%;
+             font-size: 17px;
+        }
+        .flex-container {
+					display: inline-flex;
+					margin:10px 0px 0px 310px;
+					height: 83vh;
+					overflow-x: hidden;
+				}
+                .flex-child {
+				text-align:center;
+				width:400px;
+				height:75%;
+				margin:30px;
+				background-color:#333;
+				border-radius:10px;
+				border:2px solid; 
+				border-color: #050505;
+				overflow-y:scroll;
+				padding-bottom:10px;
+				
+			} 
+        .second{
+            height: 700px;
+          } 
+        .table  td {
+  padding: 1px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  tr:nth-child(even) {background-color: #7f2929;}
+}
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+t{
+    color: rgb(25, 37, 105);;
+}
+        
+        li
+        {
+            float: right;
+            padding-right: 11px;
+        }
+        ul
+        {
+           list-style:none;
+           margin:15px;
+           padding:22px;
+        }
+        nav a:hover{background:black;}
+    </style>
+
+<section class="header" id="home">
+    <div class="navlinks">
+     <nav>
+        <ul>
+          <img src="{{url_for('static', filename='logo.jpg')}}" alt="logo" width="250" height="70">
+            <li><a href ="{{url_for('student_signin')}}" onclick="return confirm('Are you sure?')"> LOGOUT</a></li>
+            <li><a href="#status">STATUS</a></li>
+            <li><a href="#home">HOME</a></li>
+        </ul>
+     </nav>
+    </div>
+
+    <div class="flex-container">
+        <div class="row">
+            <div class="flex-child">
+                <svg xmlns="http://www.w3.org/2000/svg" width="350" height="350" color="white" fill="currentColor" class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
+                    <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                    <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5Zm0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/>
+                  </svg>
+    
+                  <a class="input button" href='/complaint_form/{{eid}}'>Register</a>
+            
+            </div>
+          </div>
+          <div class="flex-child">
+            <svg xmlns="http://www.w3.org/2000/svg" width="300" height="350" color="white" fill="currentColor" class="bi bi-clipboard2-check-fill" viewBox="0 0 16 16">
+                <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
+                <path d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585c.055.156.085.325.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5c0-.175.03-.344.085-.5Zm6.769 6.854-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+              </svg>
+              <a class="input button" href='/undertaking'>Undertaking</a>
+            
+          </div>
+        </div>
+      </div>
+    
+</section>
+<section class="second" id="status">
+    <h2 style="color: rgb(185, 16, 16);">STATUS</h2>
+    <div style="color: rgb(185, 16, 16);" class="msg">{{ msg }}</div>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Complaint Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Complaint Letter</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        {% for v in all_complaint %}
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">{{v.Complaint_Id}}</th>
+            <td>{{v.Stud_Email_Id}}  </td>
+            <td>{{v.Complaint_Letter}}</td>
+            <td>{{v.Status}}</td>
+          </tr>
+           {% endfor %}
+        </tbody>
+      </table>
+</section>
+
+</body>
+</html>

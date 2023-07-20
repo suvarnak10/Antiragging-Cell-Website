@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regulations</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow-y: scroll;
+        }
+
+        header {
+            color:white;
+        background-color: #ff0057;
+        padding: 25px;
+        text-align: center;
+        }
+        main 
+        {
+        background-size: cover;
+    
+        background-color: #333;
+        position: relative;
+        
+        margin: 0 auto;
+        min-height: 100vh;
+        column-gap: 4rem;
+        padding-block: min(20vh, 2rem);
+                }
+
+        
+
+        /* Styles specific to the rules section */
+        #regulations {
+        margin-bottom: 40px;
+        color: white;
+        padding-left: 100px;
+        padding-right: 100px;
+        }
+
+        #regulations h2 {
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 20px;
+        }
+        #regulations p{
+            font-size:large;
+        }
+
+        #regulations ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        color: white;
+        font-size: large;
+        }
+
+        #regulations li {
+        margin-bottom: 10px;
+        color: white;
+        }
+    </style>
+    <header>
+        <img src="{{url_for('static', filename='regulations3.png')}}" width="250" height="250">
+        <h1>Anti-Ragging Regulations </h1>
+    </header>
+    
+    <main>
+        
+
+        <section id="regulations">
+            <h2 style="color: white">Regulations</h2>
+            <p style="color: white" class="description"> Regulations on curbing the menace of Ragging in Higher Educational Institutions</p>
+            <p style="color: white"class="description">Ragging is a criminal offense and UGC has framed regulations on curbing the menace of ragging in higher
+              educational institutions in order to prohibit, prevent and eliminate the scourge of ragging. In pursuance to the
+              Judgment of the Hon’ble Supreme Court of India dated 08.05.2009 in Civil Appeal No. 887/2009, in exercise
+              of the powers conferred by clause (g) of sub-section (1) of section 26 of the University Grants Commission
+              Act, 1956, the UGC notified “Regulations on Curbing the Menace of Ragging in Higher Educational Institutions.These regulations are mandatory for all universities/ institutions. </p>
+            <ul  style="color: white" class="regulations-list">
+                <li>No act of ragging, major or minor, shall go unnoticed. No ragger, male or female, student or non-student, shall go
+                  unpunished. No institution that fails to take action against ragging shall be allowed to operate.
+                  </li>
+                <li>The Supreme Court, in its judgement dated 08 May 2009 ordered the implementation of a ragging prevention programme
+                  comprising, inter alia, setting up a toll-free anti-ragging helpline/ call center, a database of institutions/ students, and
+                  engaging an independent non-government agency as the monitoring agency.</li>
+                <li>Regulatory provisions and the appropriate law are in force to eliminate ragging in all its forms from the universities,
+                  deemed universities and other higher educational institutions in the country by prohibiting, preventing its occurrence
+                  and punishing those who indulge in ragging.</li>
+               
+            </ul>
+        </section>
+    </main>
+ 
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anti-Ragging Undertaking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #3e555e;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .undertaking-container {
+      max-width: 600px;
+      height: 400px;
+      margin: 140px 390px;
+      padding: 20px;
+      background-color: #333;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .tickmark-checkbox {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid white;
+      border-radius: 3px;
+      text-align: center;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .tickmark-checkbox.checked::before {
+      content: "\2713";
+      color:white;
+    }
+
+    .undertaking-content p {
+      margin-bottom: 10px;
+    }
+
+    .submit-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #535453;
+      color: #fff;
+      border: 1px solid white;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .submit-button:hover {
+      background-color: #080808;
+    }
+  </style>
+  <script>
+    function toggleTickmark(element) {
+      element.classList.toggle("checked");
+    }
+
+    function submitUndertaking() {
+      var isChecked = document.querySelector(".tickmark-checkbox.checked");
+
+      if (isChecked) {
+        // Perform form submission or any other required action
+        alert("Undertaking submitted successfully!");
+        /*window.location.href="/test/{{eid}}";*/
+      } else {
+        alert("Please confirm the undertaking by ticking the checkbox.");
+      }
+    }
+  </script>
+</head>
+<body>
+  
+  <div class="undertaking-container">
+    <div class="undertaking-content">
+        <h1 style="color: white;">Anti-Ragging Undertaking</h1>
+      <p style="color: white;">
+        I hereby acknowledge that I have read and understood the policies and regulations outlined by the institution. I understand that any form of misconduct, including but not limited to ragging, is strictly prohibited. I undertake to abide by the rules and contribute to maintaining a safe and inclusive environment for all students.
+      </p>
+      <p style="color: white;">
+        <label for="confirmCheckbox">
+          <span class="tickmark-checkbox" onclick="toggleTickmark(this)"></span>
+          I will treat all fellow students with respect and refrain from engaging in any form of ragging or harassment.
+        </label>
+      </p>
+      <p style="color: white;">
+        <label for="reportCheckbox">
+          <span class="tickmark-checkbox" onclick="toggleTickmark(this)"></span>
+          I will report any incidents of ragging or misconduct that I witness or experience to the appropriate authorities.
+        </label>
+      </p>
+      <p style="color: white;">
+        <label for="complyCheckbox">
+          <span class="tickmark-checkbox" onclick="toggleTickmark(this)"></span>
+          I understand that failure to comply with these regulations may result in disciplinary action as per the institution's policies.
+        </label>
+      </p>
+      <button class="submit-button" onclick="submitUndertaking()">Submit</button>
+      
+    </div>
+  </div>
+</body>
+</html>
